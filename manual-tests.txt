@@ -27,7 +27,7 @@ Scenario: Unsuccessful upload using an incorrect file type
   And the response should contain an error message "Unsupported file type"
 
 Scenario: Unsuccessful upload when file is too big
-  Given I am authorized to upload to the API
+  Given I am authorised to upload to the API
   And I have a file named "large-photo.jpg" that exceeds the file size limit
   When I make a POST request to "https://web-cdn.api.bbci.co.uk/wc-uploader/sport/live-events/my-photos?upload=large-photo.jpg"
   Then I should receive a response with status code 413
@@ -49,7 +49,7 @@ Tooling:
 
 Scenario 1:
   Create a new GET request.
-  Include the authorization token in the request header as Authorization: Bearer <token>.
+  Include the authorisation token in the request header as Authorization: Bearer <token>.
   Set the request URL as https://web-cdn.api.bbci.co.uk/wc-uploader/sport/live-events/my-photos.
   Click Send to execute the request.
   Verify that the response contains: Status code 200.
